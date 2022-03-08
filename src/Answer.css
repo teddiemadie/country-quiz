@@ -3,6 +3,9 @@
     display: flex;
     border: 1px solid black;
     border-radius: 12px;
+    margin-top: 25px;
+    border: 2px solid rgba(96, 102, 208, 0.7);
+    box-sizing: border-box;
     /* outline: 2px solid red; */
 }
 
@@ -16,6 +19,16 @@
 }
 
 .answer:hover .country{
+    color: #FFFFFF;
+}
+
+.answerIsTrue {
+    background: #60BF88;
+    color: #FFFFFF;
+}
+
+.answerIsFalse {
+    background: #EA8282;  
     color: #FFFFFF;
 }
 
