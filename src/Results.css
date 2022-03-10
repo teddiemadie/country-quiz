@@ -10,6 +10,7 @@
 
 .results_container{
     display: flex;
+    width: 464px;
     flex-direction: column;
     background: #FFFFFF;
     border-radius: 24px;

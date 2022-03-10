@@ -3,7 +3,7 @@ import React from 'react'
 import './Results.css'
 import WinnerIcon from './img/winner_icon.svg'
 
-function Results(resultISShown, setResultIsShown) {
+function Results({resultISShown, setResultIsShown}) {
     
     const backToHome = () => {
         setResultIsShown(false);
