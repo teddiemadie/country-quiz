@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './Home.css'
 import Answer from './Answer'
 import Results from './Results'
-import randomNumber from './util';
+import {randomNumber, createSetQA} from './util';
 import axios from 'axios';
 import AdventureIcon from './img/adventure_icon.svg'
 
@@ -38,10 +38,19 @@ function Home() {
             setCorrectAnswer(chosen[ci].name.common);
 
             setArrCountries(chosen);
+            
+            const setQA = createSetQA(res.data);
+            console.warn(`test 1 question_type: ${setQA.question_type}`);
+            console.warn(`test 2 question_value: ${setQA.question_value}`);
+            console.warn(`test 3 question: ${setQA.question}`);
+            console.warn(`test 4 answer_selection: ${setQA.answer_selection}`);
+            console.warn(`test 5 answer_type: ${setQA.answer_type}`);
+            console.warn(`test 6 answers: ${setQA.answers}`); 
+            console.warn(`test 7 correct_answer: ${setQA.correct_answer}`);
         };
         getCountryName();
     },[]);
-    // console.warn(arrCountries[0].capital[0]);
+    // console.warn(arrCountries);
 
     return (        
         <div className='home'>         
