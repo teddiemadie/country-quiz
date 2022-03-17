@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <div style={{
-        backgroundImage: `url(${BackgroundImg})`,width: '100%', height:'100vh'}}>
+        backgroundImage: `url(${BackgroundImg})`,width: '100%', height:'200vh'}}>
         <Home/>
       </div>
     </div>
