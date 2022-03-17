@@ -4,7 +4,7 @@ export function randomNumber(data,amount) {
     const chosenNums = [];
     for (let i=0; i<amount; i++){
         let ri = Math.round(Math.random()*(data.length-1));
-        console.log(`ri = ${ri}`);
+        // console.log(`ri = ${ri}`);
         chosenNums.push(data[ri]);
         data.splice(ri,1);
     }
@@ -15,6 +15,7 @@ export function randomNumber(data,amount) {
 }
 
 export function createSetQA(data) {
+    console.warn('hello>>>>>', data)
     const setQA = {
         question_type: null,
         question_value:null,
@@ -25,15 +26,18 @@ export function createSetQA(data) {
         correct_answer: null,
     };
 
-    let randomQuestionTypeNum = Math.round(Math.random()* (3 + 1));
+    let randomQuestionTypeNum = Math.floor(Math.random()* (3 + 1));
     let randomCountries = randomNumber(data,4);
-    let randomQuestionValue = randomCountries[Math.round(Math.random()* (3 + 1))];
-    console.warn(`randomCountries: ${randomCountries.length}`)
+    let randomQuestionValue = randomCountries[Math.floor(Math.random()* (3 + 1))];
+    console.warn('randomQuestioTypeNum',randomQuestionTypeNum);
+    console.warn(`randomCountries: ${randomCountries.length}`);
+    console.warn('randomCountries:',randomCountries);
+    console.warn('randomQuestionValue:',randomQuestionValue);
 
     switch (randomQuestionTypeNum) {
         case 0:
             setQA.question_type = 'capital';
-            setQA.question_value = randomQuestionValue.capital[0];
+            setQA.question_value = randomQuestionValue.capital;
             setQA.question = ' is the capital of ';
             setQA.answer_type = 'country';
             randomCountries.map(c => setQA.answers.push(c.name.common));
@@ -44,13 +48,13 @@ export function createSetQA(data) {
             setQA.question_value = randomQuestionValue.name.common;
             setQA.question = ' has the capital named ';
             setQA.answer_type = 'capital';
-            randomCountries.map(c => setQA.answers.push(c.capital[0]));
-            setQA.correct_answer = randomQuestionValue.capital[0];
+            randomCountries.map(c => setQA.answers.push(c.capital));
+            setQA.correct_answer = randomQuestionValue.capital;
             break;
         case 2:
             setQA.question_type = 'flag';
             setQA.question_value = randomQuestionValue.flags.png;
-            setQA.question = 'Which country does this flag belong to ?';
+            setQA.question = 'Which country does this flag belong to';
             setQA.answer_type = 'country';
             randomCountries.map(c => setQA.answers.push(c.name.common));
             setQA.correct_answer = randomQuestionValue.name.common;
@@ -60,13 +64,13 @@ export function createSetQA(data) {
             setQA.question_value = randomQuestionValue.name.common;
             setQA.question = ' has a population of ';
             setQA.answer_type = 'number';
-            randomCountries.map(c => setQA.answers.push(`${Math.round(c.population/1000)}K`));
-            setQA.correct_answer = `${Math.round(randomQuestionValue.population/1000)}K`;
+            randomCountries.map(c => setQA.answers.push(c.population>1000000?`${Math.round(c.population/1000000)} million`:`${Math.round(c.population/1000)} thousand`));
+            setQA.correct_answer = randomQuestionValue.population>1000000?`${Math.round(randomQuestionValue.population/1000000)} million`:`${Math.round(randomQuestionValue.population/1000)} thousand`;
             break;
     
         default:
-            break;
+            break;        
     }
-
+    console.warn('correct_answer',setQA.correct_answer);
     return setQA;
 }
