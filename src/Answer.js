@@ -8,10 +8,10 @@ function Answer({data,setQa,answer_selection,answers, correct_answer, answerIsCh
     let user_correct_answer_count = score;
     let user_click_count = answerIsChosen;
     const handleAnswer = () => {
-        console.warn('answer clicked');
+        // console.warn('answer clicked');
         user_click_count++;
         setAnswerIsChosen(user_click_count);
-        console.warn('user_click_count',user_click_count);
+        // console.warn('user_click_count',user_click_count);
 
         if (user_click_count === 1 && answers === correct_answer) {
             setUserResult(true);

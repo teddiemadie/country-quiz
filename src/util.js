@@ -8,14 +8,14 @@ export function randomNumber(data,amount) {
         chosenNums.push(data[ri]);
         data.splice(ri,1);
     }
-    data.map(newnum => console.log(`newnum = ${newnum}`));
+    // data.map(newnum => console.log(`newnum = ${newnum}`));
 
     return chosenNums;
     
 }
 
 export function createSetQA(data) {
-    console.warn('hello>>>>>', data)
+    // console.warn('hello>>>>>', data)
     const setQA = {
         question_type: null,
         question_value:null,
@@ -29,10 +29,10 @@ export function createSetQA(data) {
     let randomQuestionTypeNum = Math.floor(Math.random()* (3 + 1));
     let randomCountries = randomNumber(data,4);
     let randomQuestionValue = randomCountries[Math.floor(Math.random()* (3 + 1))];
-    console.warn('randomQuestioTypeNum',randomQuestionTypeNum);
-    console.warn(`randomCountries: ${randomCountries.length}`);
-    console.warn('randomCountries:',randomCountries);
-    console.warn('randomQuestionValue:',randomQuestionValue);
+    // console.warn('randomQuestioTypeNum',randomQuestionTypeNum);
+    // console.warn(`randomCountries: ${randomCountries.length}`);
+    // console.warn('randomCountries:',randomCountries);
+    // console.warn('randomQuestionValue:',randomQuestionValue);
 
     switch (randomQuestionTypeNum) {
         case 0:
@@ -71,6 +71,6 @@ export function createSetQA(data) {
         default:
             break;        
     }
-    console.warn('correct_answer',setQA.correct_answer);
+    // console.warn('correct_answer',setQA.correct_answer);
     return setQA;
 }

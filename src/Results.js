@@ -8,7 +8,6 @@ function Results({data,setQa,resultISShown, setResultIsShown, score, setScore,se
     
     const backToHome = () => {
         setResultIsShown(false);
-        console.warn(`test back to home ${resultISShown}`);
         setQa(createSetQA(data));
         setScore(0);
         setAnswerIsChosen(0);

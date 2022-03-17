@@ -17,7 +17,7 @@ function Home() {
 
     const [resultISShown, setResultIsShown] = useState(false);
     const displayResults = () => {
-        console.warn('button clicked!');
+        // console.warn('button clicked!');
         setResultIsShown(true);
         setUserResult();
     };
@@ -28,7 +28,7 @@ function Home() {
             const res = await axios.get(
                 "https://restcountries.com/v3.1/all"
             );
-            console.warn(res.data);
+            // console.warn(res.data);
             setData(res.data);
 
             setQa(createSetQA(res.data));
