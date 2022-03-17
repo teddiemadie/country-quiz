@@ -4,13 +4,14 @@ import './Results.css'
 import { createSetQA } from './util';
 import WinnerIcon from './img/winner_icon.svg'
 
-function Results({data,setQa,resultISShown, setResultIsShown, score, setScore}) {
+function Results({data,setQa,resultISShown, setResultIsShown, score, setScore,setAnswerIsChosen}) {
     
     const backToHome = () => {
         setResultIsShown(false);
         console.warn(`test back to home ${resultISShown}`);
         setQa(createSetQA(data));
         setScore(0);
+        setAnswerIsChosen(0);
     };
   return (
     <div className='results'>

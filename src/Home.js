@@ -1,25 +1,25 @@
-import React, { useEffect, useState } from 'react'
-import './Home.css'
-import QnA from './QnA'
-import Results from './Results'
+import React, { useEffect, useState } from 'react';
+import './Home.css';
+import QnA from './QnA';
+import Results from './Results';
 import {createSetQA} from './util';
 import axios from 'axios';
-import AdventureIcon from './img/adventure_icon.svg'
+import AdventureIcon from './img/adventure_icon.svg';
 
 
 function Home() {
     const [data,setData] = useState();
     const [qa, setQa] = useState({});
 
-    const [answerIsChosen, setAnswerIsChosen] = useState(false);
+    const [answerIsChosen, setAnswerIsChosen] = useState(0); //1: chosen, 0: not chosen
     const [userResult, setUserResult] = useState();
     const [score, setScore] = useState(0);
 
     const [resultISShown, setResultIsShown] = useState(false);
-    console.warn(`test: ${!resultISShown}`);
     const displayResults = () => {
         console.warn('button clicked!');
         setResultIsShown(true);
+        setUserResult();
     };
     // console.warn('fourth');
 
@@ -75,6 +75,7 @@ function Home() {
                     setResultIsShown={setResultIsShown}
                     score={score}
                     setScore={setScore}
+                    setAnswerIsChosen={setAnswerIsChosen}
                 />
             }
 

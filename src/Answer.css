@@ -9,17 +9,25 @@
     /* outline: 2px solid red; */
 }
 
-.answer:hover {
+/* .answer:hover {
     cursor: pointer;
     background-color: #F9A826;
 }
 
-.answer:hover .orderOfAnswer {
+.answer:hover .answer_selection {
     color: #FFFFFF;
 }
 
 .answer:hover .country{
     color: #FFFFFF;
+} */
+
+.cursor-not-allowed {
+    cursor: not-allowed;
+}
+
+.pointer-events-none {
+    pointer-events: none;
 }
 
 .answerIsTrue {
@@ -32,22 +40,22 @@
     color: #FFFFFF;
 }
 
-.orderOfAnswer {
+.answer_selection {
     padding-left: 20px;
     margin-right: 60px;
     font-family: Poppins;
     font-style: normal;
     font-weight: 500;
     font-size: 24px;
-    /* line-height: 36px; */
     color: #6066D0CC;
 }
 
-.country {
+.answers {
     font-family: Poppins;
     font-style: normal;
     font-weight: 500;
     font-size: 24px;
-    /* line-height: 36px; */
+    padding-right: 20px;
     color: #6066D0CC;
+    text-align: justify;
 }

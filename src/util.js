@@ -37,7 +37,7 @@ export function createSetQA(data) {
     switch (randomQuestionTypeNum) {
         case 0:
             setQA.question_type = 'capital';
-            setQA.question_value = randomQuestionValue.capital;
+            setQA.question_value = randomQuestionValue.capital.length > 1? randomQuestionValue.capital.join(', '): randomQuestionValue.capital;
             setQA.question = ' is the capital of ';
             setQA.answer_type = 'country';
             randomCountries.map(c => setQA.answers.push(c.name.common));
@@ -48,7 +48,7 @@ export function createSetQA(data) {
             setQA.question_value = randomQuestionValue.name.common;
             setQA.question = ' has the capital named ';
             setQA.answer_type = 'capital';
-            randomCountries.map(c => setQA.answers.push(c.capital));
+            randomCountries.map(c => setQA.answers.push(c.capital.length > 1? c.capital.join(', '): c.capital));
             setQA.correct_answer = randomQuestionValue.capital;
             break;
         case 2:
