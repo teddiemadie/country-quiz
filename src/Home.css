@@ -11,14 +11,13 @@ p{
     margin-left: auto;
     margin-right: auto;
     position: relative;
-    top: 15%;
+    /* top: 6%; */
 }
 
 .upper {
     display: flex;
     position: relative;
 }
-
 
 .upper p {
     font-family: Poppins;
